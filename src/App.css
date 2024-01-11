@@ -1,0 +1,384 @@
+@import url('https://fonts.googleapis.com/css2?family=Spartan:wght@700&display=swap');
+
+:root {
+
+  --main-bg:rgb(58, 71, 100);
+  --toggle-bg: hsl(223, 31%, 20%);
+  --screen-bg:hsl(224, 36%, 15%);
+
+  --key-bg: hsl(225, 21%, 49%);
+  --key-shadow: hsl(224, 28%, 35%);
+  --key-red:hsl(6, 63%, 50%);
+  --key-red-shadow:hsl(6, 70%, 34%);
+
+  --key-orange:hsl(30, 25%, 89%);
+  --key-orange-shadow: hsl(28, 16%, 65%);
+
+  --text-blue: hsl(30, 25%, 89%);
+  --text-white: rgb(255, 255, 255);
+  --text-btn: hsl(221, 14%, 31%);
+
+}
+
+[data-theme='first'] {
+
+  --main-bg:rgb(58, 71, 100);
+  --toggle-bg: hsl(223, 31%, 20%);
+  --screen-bg:hsl(224, 36%, 15%);
+
+  --key-bg: hsl(225, 21%, 49%);
+  --key-shadow: hsl(224, 28%, 35%);
+  --key-red:hsl(6, 63%, 50%);
+  --key-red-shadow:hsl(6, 70%, 34%);
+
+  --key-orange:hsl(30, 25%, 89%);
+  --key-orange-shadow: hsl(28, 16%, 65%);
+
+  --text-blue: hsl(30, 25%, 89%);
+  --text-white: rgb(255, 255, 255);
+  --text-screen: hsl(30, 25%, 89%);
+  --text-btn: hsl(221, 14%, 31%);
+}
+
+
+
+[data-theme='second'] {
+
+  --main-bg: rgb(230, 230, 230);
+  --toggle-bg:  hsl(0, 5%, 81%);
+  --screen-bg:hsl(0, 0%, 93%);
+
+  --key-bg: hsl(185, 42%, 37%);
+  --key-shadow: hsl(185, 58%, 25%);
+  --key-red:hsl(25, 98%, 40%);
+  --key-red-shadow:hsl(25, 99%, 27%);
+
+  --key-orange:hsl(45, 7%, 89%);
+  --key-orange-shadow: hsl(35, 11%, 61%);
+
+  --text-blue: hsl(60, 10%, 19%);
+  --text-white:  rgb(255, 255, 255);
+  --text-screen: hsl(60, 10%, 19%);
+  --text-btn: hsl(60, 10%, 19%)
+}
+
+
+[data-theme='third'] {
+  
+  --main-bg:hsl(268, 75%, 9%);
+  --toggle-bg: hsl(268, 71%, 12%);
+  --screen-bg:hsl(268, 71%, 12%);
+
+  --key-bg: hsl(281, 89%, 26%);
+  --key-shadow: hsl(285, 91%, 52%);
+  --key-red:hsl(176, 100%, 44%);
+  --key-red-shadow:hsl(177, 92%, 70%);
+
+  --key-orange:hsl(268, 47%, 21%);
+  --key-orange-shadow: hsl(290, 70%, 36%);
+
+  --text-blue: hsl(52, 100%, 62%);
+  --text-dark-blue: hsl(198, 20%, 13%);
+  --text-white:  rgb(255, 255, 255);
+
+  --text-screen: hsl(52, 100%, 62%);
+  --text-btn:hsl(52, 100%, 62%);
+}
+
+body, html {
+  background-color: var(--main-bg);
+}
+
+.App {
+  background-color: var(--main-bg);
+  height: 100vh;
+  font-family: 'Spartan', sans-serif;
+  justify-content: center;
+  display: flex;
+  color: var(--text-white);
+}
+
+.calc-layout{
+  margin-top: 10vh;
+  display: flex;
+  flex-direction: column;
+  width: 500px;
+}
+
+.title-theme{
+  justify-content: space-between;
+  display: flex;
+  color: var(--text-blue);
+}
+
+.calc-title{
+  font-size: 32px;
+  
+}
+
+.output-layout{
+  margin-top: 2rem;
+  color: var(--text-screen);
+  background-color: var(--screen-bg);
+  height: 7rem;
+  text-align: right;
+  align-items: center;
+  font-size: 42px;
+  font-weight: 700;
+  margin-right: 1rem;
+  width: 100%;
+  border: none;
+  border-radius: 10px;
+  outline: none;
+  box-sizing: border-box;
+  padding-right: 2rem;
+}
+
+
+
+.buttons-layout{
+  margin-top: 1rem;
+  background-color: var(--toggle-bg);
+  border-radius: 10px;
+  padding: 1.8rem;
+ 
+}
+
+.btn-grid{
+  display: grid;
+  grid-template-columns: auto auto auto auto;
+  gap: 20px;
+}
+
+.num-btn{
+  padding-top: 0.8rem;
+  background-color: var(--key-orange);
+  color: var(--text-btn);
+  font-size: 32px;
+  border-radius: 10px;
+  text-align: center;
+  width: 92px;
+  height: 45px;
+}
+
+.num-btn:hover, .del-btn:hover{
+  cursor: pointer;
+  filter: brightness(0.7);
+}
+
+
+.num-btn:active, .del-btn:active{
+  transform: scale(96%);
+}
+
+
+.del-btn{
+
+  padding-top: 0.8rem;
+  text-transform: uppercase;
+  text-align: center;
+  background-color: var(--key-bg);
+  width: 92px;
+  height: 45px;
+  border-radius: 10px;
+}
+
+.del-btn div{
+  margin-top: 0.5rem;
+  font-size: 18px;
+}
+
+
+.row-btns{
+ margin-top: 1.5rem;
+ display: grid;
+ grid-template-columns: auto auto;
+ gap: 20px;
+ 
+}
+
+.reset-btn{
+ font-size: 20px;
+ text-transform: uppercase;
+ width: 208px;
+ height: 60px;
+ font-weight: 700;
+ color: var(--text-white);
+ background-color: var(--key-bg);
+ border: none;
+ border-radius: 10px;
+}
+
+.eq-btn{
+  font-size: 20px;
+  width: 208px;
+  max-height: 60px;
+  font-weight: 700;
+  color: var(--text-dark-blue);
+  background-color: var(--key-red);
+  border: none;
+  border-radius: 10px;
+}
+
+.reset-btn:hover, .eq-btn:hover{
+  cursor: pointer;
+  filter: brightness(0.7);
+}
+
+.reset-btn:active, .eq-btn:active{
+  transform: scale(96%);
+  
+}
+
+
+/* .theme-switch{
+  display: flex;
+  align-items: end;
+}
+
+.themeTitle{
+  margin-right: 1rem;
+  text-transform: uppercase;
+  font-size: 12px;
+}
+
+.radioContainer{
+  position: relative;
+}
+
+.firstTheme{
+  position: absolute;
+  top: -1rem;
+  left: 0.1rem;
+  font-size: 12px;
+}
+
+.secondTheme{
+  position: absolute;
+  top: -1rem;
+  left: 1.4rem;
+  font-size: 12px;
+}
+
+.thirdTheme{
+  position: absolute;
+  top: -1rem;
+  left: 2.8rem;
+  font-size: 12px;
+}
+
+
+.switchContainer input {
+  display: none;
+}
+
+.switchContainer label {
+  cursor: pointer;
+  height: 130%;
+  position: absolute;
+  text-align: center;
+  top: -1rem;
+  width: 1.1rem;
+  z-index: 100;
+}
+
+
+.themeSwitchContainer {
+  align-items: flex-end;
+  display: flex;
+  gap: 1rem;
+}
+
+
+.switchContainer {
+  margin-bottom: -.5rem;
+  position: relative;
+}
+
+.slider {
+  background-color: var(--toggle-bg);
+  border-radius: 25px;
+  display: inline-block;
+  height: 1.5rem;
+  position: relative;
+  width: 4rem;
+}
+
+.slider::before {
+  background-color: var(--key-red);
+  border-radius: 50%;
+  content: "";
+  height: 1rem;
+  margin-inline: .25rem;
+  position: absolute;
+  top: 50%;
+  transform: translate(0, -50%);
+  transition: all ease .3s;
+  width: 1rem;
+}
+
+#firstTheme:checked ~ .slider::before {
+  transform: translate(0, -50%);
+}
+
+#secondTheme:checked ~ .slider::before {
+  transform: translate(1.2rem, -50%);
+}
+
+#thirdTheme:checked ~ .slider::before {
+  transform: translate(2.5rem, -50%);
+}
+ */
+
+@media screen and (max-width: 600px) {
+  .calc-layout{
+    width: 88%;
+    margin-top: 3vh;
+    min-width: 330px;
+  }
+
+  .output-layout{
+    font-size: 32px;
+    height: 5.5rem;
+  }
+
+  .btn-grid{
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    gap: 10px;
+  }
+
+  .num-btn{
+    font-size: 24px;
+    min-width: 60px;
+    width: auto;
+    height: 40px;
+    border-radius: 4px;
+  }
+
+  .del-btn div {
+    margin-top: 0.2rem;
+    font-size: 16px;
+  }
+
+  .del-btn{
+    min-width: 50px;
+    width: auto;
+    height: 40px;
+    border-radius: 4px;
+  }
+
+  .row-btns {
+    margin-top: 1.5rem;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+  }
+
+  .reset-btn, .eq-btn{
+    width: auto;
+    border-radius: 4px;
+
+  }
+
+
+}
